@@ -4,15 +4,30 @@ import {Stage, Sprite} from 'react-pixi';
 const SPEED = 0.005;
 const element = {
 }
+let state: any;
 export class App extends React.Component {
+  isClick = false;
+  rotation = 0;
   constructor() {
     super();
+    this.state = {rotation: 100};
+
+
   }
   componentDidMount() {
     var tick = () => {
+      let alpha = 0.1
+      this.setState({rotation: (this.state as any).rotation + alpha})
+      
       requestAnimationFrame(tick);
     };
     tick();
+  }
+
+  callback(){
+    this.isClick = true;
+    console.log("success " + this.isClick);
+
   }
 
   render() {
@@ -21,6 +36,9 @@ export class App extends React.Component {
         width={1200}
         height={800}>
         <Sprite
+            interactive = {true}
+            click ={this.callback}
+            rotation ={(this.state as any).rotation}
             image={'../assets/cupcake.png'}
             x={100}
             y={300}
