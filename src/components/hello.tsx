@@ -7,7 +7,6 @@ const element = {
 export class App extends React.Component {
   constructor() {
     super();
-    this.state = {rotation: 0};
   }
   componentDidMount() {
     var tick = () => {
