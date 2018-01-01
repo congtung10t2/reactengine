@@ -13,7 +13,7 @@ declare module 'react-pixi' {
   export { render, unmountComponentAtNode } from 'react-dom';
 
   export interface ContainerPropsType extends DisplayObjectPropsType {
-    children?: any|PIXI.DisplayObject[];
+    children?: any | PIXI.DisplayObject[];
     width?: number;
     height?: number;
   }
@@ -32,6 +32,10 @@ declare module 'react-pixi' {
     defaultCursor?: string;
     transform?: PIXI.TransformBase;
     alpha?: number;
+    click?: any;
+    pointerdown?: any;
+    pointerup?: any;
+    pointerover?: any;
     visible?: boolean;
     renderable?: boolean;
     parent?: PIXI.Container;

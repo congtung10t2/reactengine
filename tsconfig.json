@@ -4,9 +4,23 @@
         "sourceMap": true,
         "noImplicitAny": true,
         "module": "commonjs",
-        "target": "es5",
         "allowSyntheticDefaultImports": true,
-        "jsx": "react"
+        "jsx": "react",
+        "target": "es6",
+        "allowJs": true,
+        "moduleResolution": "node",
+        "rootDir": "src",
+        "noImplicitReturns": true,
+        "noImplicitThis": true,
+        "strictNullChecks": true,
+        "isolatedModules": false,
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "declaration": false,
+        "removeComments": true,
+        "noLib": false,
+        "preserveConstEnums": true,
+        "suppressImplicitAnyIndexErrors": true
     },
     "include": [
         "./src/**/*"

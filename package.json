@@ -5,7 +5,7 @@
   "license": "MIT",
   "dependencies": {
     "@types/pixi.js": "^4.4.2",
-    "@types/react": "^15.0.21",
+    "@types/react": "^15.6.1",
     "@types/react-dom": "^0.14.23",
     "create-react-class": "^15.6.2",
     "html-webpack-plugin": "^2.30.1",
@@ -13,7 +13,7 @@
     "pixi.js": "^4.5.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
-    "react-pixi": "^0.9.4",
+    "react-pixi": "^0.9.16",
     "webpack": "^3.10.0",
     "webpack-dev-server": "^2.9.7"
   },
