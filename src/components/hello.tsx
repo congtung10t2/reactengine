@@ -1,57 +1,34 @@
 import * as React from 'react';
 import * as pixi from 'pixi.js';
 import {Stage, Sprite,SpritePropsType} from 'react-pixi';
-let state: any;
-
+import { RotSprite } from './rotSprite';
 export class App extends React.Component {
-  isClick = false;
-  rotation = 0;
-  allsprite: any[] = [];
+  state ={
+    sprites: []
+  };
+  
   constructor(props:any) {
     super(props);
-    this.state = {rotation: 0};
-    for(let i = 0; i < 10; i++){
-      let sprite = React.createElement(Sprite, {
-        interactive: true,
-        image: '../assets/cupcake.png',
-        x:100+Math.random()*13121231233 % 1000,
-        y:300,
-        scale:'0.5,0.5',
-        rotation:50,
-        
-      });
-      this.allsprite.push(sprite);
-    }
-    
   }
+    
   componentDidMount() {
-    
-    setInterval(()=>{
-      if(this.isClick) {
-        this.rotation++;
-        for(let i = 0; i < 10; i++){
-          this.allsprite.forEach(element=>{
-            element.setState({rotation: this.rotation++})
-          })
-        }
-        this.setState({rotation: this.rotation})
-      }
-    }, 100)
+    var sprites = [];
+    for(let i = 0; i < 10; i++){
+      let sprite = React.createElement(RotSprite, {rotSpeed: 10, x:200*i, 
+      y: 200});
+      sprites.push(sprite);
+    }
+    this.setState({
+      sprites: sprites
+    })
   }
-  
-  callback = ()=>{
-    this.isClick = !this.isClick;
-    
-  }
-  
+
   render() {
     return (
         <Stage
         width={1200}
         height={800}
-        children={this.allsprite}/>
-       
-          
+        children={this.state.sprites}/>
     );
   }
 }
