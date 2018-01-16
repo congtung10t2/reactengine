@@ -23,6 +23,7 @@ export class Reels extends React.Component<{col:number, row:number, state:string
                         maxSpeed={60}
                         startSpeed={-10}
                         accelerate={20}
+                        stopSpeed={-5}
                         state={this.props.state}
                         index={i}/>);
     }

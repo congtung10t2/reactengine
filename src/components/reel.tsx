@@ -9,6 +9,7 @@ interface props
     state: string;
     maxSpeed: number;
     accelerate: number;
+    stopSpeed: number;
     startSpeed: number;
 }
 export class Reel extends React.Component<props>{
@@ -43,7 +44,7 @@ export class Reel extends React.Component<props>{
         })
       }
       if(this.props.state == "stopping"){
-          if(this.state.speed > 0){
+          if(this.state.speed > this.props.stopSpeed){
               this.state.speed -= this.props.accelerate;
           }
       }
@@ -56,10 +57,12 @@ export class Reel extends React.Component<props>{
   }
 
   render() {
-    
+    let rect = new PIXI.Graphics();
+    rect.drawRect(100, 40, 800, 600);
     return (
       <DisplayObjectContainer 
       x={300}
+      mask={rect}
       y={100}>
       {this.renderSymbol()}
       </DisplayObjectContainer>

@@ -21,6 +21,7 @@ export class App extends React.Component {
   }
 
   render() {
+
     return (
         <Stage
         width={1200}
@@ -36,6 +37,7 @@ export class App extends React.Component {
           <Reels
           col={3}
           row={3}
+          
           state={this.state.state}
           >
           </Reels>
